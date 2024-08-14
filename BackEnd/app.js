@@ -8,7 +8,9 @@ const cors = require('cors')
 app.use(cors({orgin:['http:localhost:5173']})) //ye upar rhega //restricting cors
 app.use(express.json()) 
 
-mongoose.connect('mongodb://127.0.0.1:27017/quotesApp')
+// mongoose.connect('mongodb://127.0.0.1:27017/quotesApp')
+mongoose.connect('mongodb+srv://vaibhavparashar0077:vaibhav123@cluster0.yti0s.mongodb.net/QuotesAppretryWrites=true&w=majority')
+
 .then(()=>{console.log("DB connected")})
 .catch((e)=>{console.log("DB NNOT CONNECTED ",e)})
 
