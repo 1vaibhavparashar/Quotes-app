@@ -9,7 +9,7 @@ function ShowQuotes() {
     const params = useParams();
 
     async function fetchQuotes() {
-        let resp = await axios.get(`http://localhost:8081/quotes/${params.id}`);
+        let resp = await axios.get(`https://git-4.onrender.com/quotes/${params.id}`);
         let { text, author } = resp.data;
         setQuote({ text, author });
     }

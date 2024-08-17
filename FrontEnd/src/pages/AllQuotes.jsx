@@ -6,7 +6,7 @@ function AllQuotes() {
     let [quotes, setQuotes] = useState([]);
 
     async function getQuotes() {
-        let resp = await fetch('http://localhost:8081/allQuotes');
+        let resp = await fetch('https://git-4.onrender.com/allquotes');
         let data = await resp.json();
         setQuotes(data);
     }

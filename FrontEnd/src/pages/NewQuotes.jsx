@@ -13,7 +13,7 @@ function NewQuotes() {
         let author = usernameRef.current.value;
         let text = quoteInpRef.current.value;
         try {
-            await axios.post('http://localhost:8081/addQuotes', { author, text });
+            await axios.post('https://git-4.onrender.com/addQuotes', { author, text });
             navigate('/');
         } catch (e) {
             console.log('Cannot post at this moment');
