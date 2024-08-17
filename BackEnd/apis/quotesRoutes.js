@@ -3,7 +3,7 @@ const Quotes = require('../models/Quotes');
 const router = express.Router();
 
 
-router.get('/allQuotes',async (req,res)=>{
+router.get('/allquotes',async (req,res)=>{
     try{
        let allQuotes =  await Quotes.find({})
        res.status(200).json(allQuotes)
@@ -13,7 +13,7 @@ router.get('/allQuotes',async (req,res)=>{
     }
     
 })
-router.post('/addQuotes',async (req,res)=>{
+router.post('/addquotes',async (req,res)=>{
     try{
         const {author,text} = req.body;
         await Quotes.create({author,text})
