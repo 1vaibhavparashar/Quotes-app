@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const app = express()
 const mongoose = require('mongoose');
@@ -19,7 +20,7 @@ app.get('/hello' , (req,res)=>{
 // seedDB()
 app.use(quotesRoute)
 
-app.listen(8080, ()=>{
+app.listen( process.env.PORT, ()=>{
     console.log('server connected at PORT : 8080');
 
 })
