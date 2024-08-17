@@ -1,0 +1,38 @@
+.quoteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.quoteContainer h1 {
+    margin: 20px 0;
+    color: #007acc;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.quoteContainer h2 {
+    margin: 20px 0;
+    color: #333;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .quoteContainer h1 {
+        font-size: 28px;
+    }
+
+    .quoteContainer h2 {
+        font-size: 20px;
+    }
+}

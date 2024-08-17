@@ -1,62 +1,29 @@
-import React from 'react'
-import { useEffect } from 'react'
-import {useParams} from 'react-router-dom'
-import axios from 'axios'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import styles from './ShowQuotes.module.css';
 
-function  ShowQuotes() {
+function ShowQuotes() {
+    let [quote, setQuote] = useState({ author: '', text: '' });
 
-    let [quote , setQuote] = useState({author:"" , text:""})
+    const params = useParams();
 
-    const params = useParams()
-    async function fetchQuotes(){
+    async function fetchQuotes() {
         let resp = await axios.get(`http://localhost:8081/quotes/${params.id}`);
-        let {text,author} = resp.data
-        setQuote({text,author})
+        let { text, author } = resp.data;
+        setQuote({ text, author });
     }
-    useEffect(()=>{
-        fetchQuotes()
-    },[])
-  return (
-    <div>
-        <h1>{quote.author}</h1>
-        <h1>{quote.text}</h1>
-    </div>
-  )
+
+    useEffect(() => {
+        fetchQuotes();
+    }, []);
+
+    return (
+        <div className={styles.quoteContainer}>
+            <h1>{quote.author}</h1>
+            <h2>{quote.text}</h2>
+        </div>
+    );
 }
 
-export default ShowQuotes
-
-
-
-// import React, { useEffect, useState } from 'react'
-// import { useParams } from 'react-router-dom'
-// import axios from "axios"
-
-
-// function ShowQuote() {
-//   let [quote, setQuote] = useState({ author: "", text: "" })
-
-//   const params = useParams();
-
-//   // fetch id
-//   async function fetchQuotes() {
-//     let resp = await axios.get(`http://localhost:8081/quotes/${params.id}`);
-//     // console.log(resp.data , "particular id")
-//     let { text, author } = resp.data;
-//     setQuote({ text, author });
-//   }
-//   useEffect(() => {
-//     fetchQuotes();
-//   }, [])
-
-//   return (
-
-//     <div>
-//       <h1>{quote.author}</h1>
-//       <h1>{quote.text}</h1>
-//     </div>
-//   )
-// }
-
-// export default ShowQuote
+export default ShowQuotes;

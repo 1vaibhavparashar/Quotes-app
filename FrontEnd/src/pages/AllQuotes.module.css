@@ -1,0 +1,25 @@
+.quotesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.quotesContainer h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #007acc;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .quotesContainer {
+        grid-template-columns: 1fr;
+    }
+}
