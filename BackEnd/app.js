@@ -9,8 +9,7 @@ app.use(cors({orgin:['http:localhost:5173']})) //ye upar rhega //restricting cor
 app.use(express.json()) 
 
 // mongoose.connect('mongodb://127.0.0.1:27017/quotesApp')
-mongoose.connect('mongodb+srv://vaibhavparashar0077:vaibhav123@cluster0.yti0s.mongodb.net/QuotesAppretryWrites=true&w=majority')
-
+mongoose.connect('mongodb+srv://vaibhavparashar0077:Vt70aw4axdHyMA25@cluster0.4e8b8fk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(()=>{console.log("DB connected")})
 .catch((e)=>{console.log("DB NNOT CONNECTED ",e)})
 
@@ -20,7 +19,7 @@ app.get('/hello' , (req,res)=>{
 // seedDB()
 app.use(quotesRoute)
 
-app.listen(8081, ()=>{
-    console.log('server connected at PORT : 8081');
+app.listen(8080, ()=>{
+    console.log('server connected at PORT : 8080');
 
 })
