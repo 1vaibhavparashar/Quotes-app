@@ -20,8 +20,8 @@ function ShowQuotes() {
 
     return (
         <div className={styles.quoteContainer}>
-            <h1>{quote.author}</h1>
-            <h2>{quote.text}</h2>
+            <h1>{quote.text}</h1>
+            <h2>{quote.author}</h2>
         </div>
     );
 }
